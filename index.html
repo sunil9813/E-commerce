@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="head_container">
+      <div class="head flex">
+        <div class="logo flex">
+          <a href="#">
+            <h3>LOGO</h3>
+          </a>
+
+          <div class="search">
+            <input type="text" placeholder="Search......." name="" value="">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+
+        <div class="left flex">
+          <div class="head_icon">
+            <i class="fa fa-user-circle"></i>
+            <label>Log In</label>
+          </div>
+          <div class="head_icon">
+            <i class="fa fa-gratipay"></i>
+            <label>Favorites</label>
+          </div>
+          <div class="head_icon">
+            <i class="fa fa-shopping-cart"></i>
+            <label>Cart</label>
+          </div>
+        </div>
+      </div>
+      <div class="navbar">
+        <nav>
+          <ul id="menuitem">
+            <li> <a href="#">HOME</a> </li>
+            <li> <a href="#">PRODUCT</a> </li>
+            <li> <a href="#">SHOP ALL</a> </li>
+            <li> <a href="#">COMPUTER</a> </li>
+            <li> <a href="#">TABLETS</a> </li>
+            <li> <a href="#">DRONES & CAMERAS</a> </li>
+            <li> <a href="#">AUDIO</a> </li>
+            <li> <a href="#">MOBILE</a> </li>
+            <li> <a href="#">T.V & HOME CINEMA</a> </li>
+            <li> <a href="#">WEARABLE TECH</a> </li>
+            <li> <a href="#">SALE</a> </li>
+          </ul>
+        </nav>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+  <script>
+    var menuitem = document.getElementById("menuitem");
+    menuitem.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menuitem.style.maxHeight == '0px') {
+        menuitem.style.maxHeight = "400px"
+      } else {
+        menuitem.style.maxHeight = "0px"
+      }
+    }
+  </script>
+
+  <section class="home">
+    <div class="slider">
+      <div class="slide active">
+        <div class="container">
+          <div class="caption">
+            <h1>iPhone 12 Pro and iPhone 12 Pro Max</h1>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#">shop now</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide  ">
+        <div class="container">
+          <div class="caption">
+            <h1>iPhone 12 Pro and iPhone 12 Pro Max</h1>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#">shop now</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide  ">
+        <div class="container">
+          <div class="caption">
+            <h1>iPhone 12 Pro and iPhone 12 Pro Max</h1>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#">shop now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- control -->
+    <div class="control">
+      <div class="prev">
+        <i class="fa fa-arrow-circle-left"></i>
+      </div>
+      <div class="next">
+        <i class="fa fa-arrow-circle-right"></i>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    const slide = document.querySelector(".slider").children;
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    let index = 0;
+
+    prev.addEventListener("click", function() {
+      prevslide()
+
+    })
+
+    next.addEventListener("click", function() {
+      nextslide()
+
+    })
+
+    function prevslide() {
+      if (index == 0) {
+        index = slide.length - 1;
+      } else {
+        index--;
+      }
+      changeSlide();
+    }
+
+    function nextslide() {
+      if (index == slide.length - 1) {
+        index = 0;
+      } else {
+        index++;
+      }
+      changeSlide();
+    }
+
+    function changeSlide() {
+      for (let i = 0; i < slide.length; i++) {
+        slide[i].classList.remove("active");
+      }
+      slide[index].classList.add("active");
+    }
+
+    function autoPlay() {
+      nextslide();
+    }
+    let timer = setInterval(autoPlay, 4000);
+  </script>
+
+
+  <section class="offer">
+    <div class="s_container">
+      <div class="content flex">
+        <div class="left">
+          <p>Holiday Deals</p>
+          <h1>Up to <br> 30% off </h1>
+          <p>Selected Smartphone Brand</p> <br>
+          <a href="#" class="btn">shop</a>
+        </div>
+        <div class="right">
+          <p>Just In</p>
+          <h1>Take Your <br> Sound <br>Anywhere </h1>
+          <p>Top Headphone Brands</p> <br>
+          <a href="#" class="btn">shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="shipping">
+    <div class="s_container">
+      <div class="grid1">
+        <div class="box">
+          <i class="fa fa-undo"></i>
+          <h3>30 Days Return</h3>
+        </div>
+        <div class="box">
+          <i class="fa fa-truck"></i>
+          <h3>Free Shipping</h3>
+        </div>
+        <div class="box">
+          <i class="fa fa-lock"></i>
+          <h3>Secure Payments</h3>
+        </div>
+        <div class="box">
+          <i class="fa fa-gift"></i>
+          <h3>New Product</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="best_seller">
+    <div class="s_container">
+      <h1 class="heading">Best Sellers</h1>
+      <div class="content">
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p1.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <img src="image/p2.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p3.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p4.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p5.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <img src="image/p6.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="view">View All</span>
+    </div>
+  </section>
+
+
+
+  <section class="category">
+    <div class="s_container">
+      <h1 class="heading">Shop By Category</h1>
+
+      <div class="content grid">
+        <div class="box">
+          <div class="img">
+            <img src="image/p1.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Computer</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p4.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Mobile</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p3.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Drones & Cameras</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p11.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Sale</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p8.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Tablets</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p12.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Best Sellers</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p7.png" alt="">
+          </div>
+          <div class="title">
+            <h2>T.V & Home Cinema</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p9.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Wearable Tech</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p10.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Speakers</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/p5.png" alt="">
+          </div>
+          <div class="title">
+            <h2>Headphones</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="best_price">
+    <div class="s_container">
+      <div class="content flex">
+        <div class="left">
+          <img src="image/b1.jpg" alt="">
+        </div>
+        <div class="right">
+          <h2>Save up to </h2>
+          <h1>$250</h1>
+          <h2>on selected laptop <br> & tablets brands </h2>
+          <p>Term and conditions apply</p>
+          <a href="#" class="btn">shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="best_seller">
+    <div class="s_container">
+      <h1 class="heading">On sale</h1>
+      <div class="content">
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p1.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+
+            <img src="image/p2.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p3.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p4.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p5.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="top">
+            <a href="#" class="btn">SALE</a>
+            <img src="image/p6.png" alt="">
+          </div>
+          <div class="bottom">
+            <p>Fitboot Inspire Fitness Tracker With Heart Rate Tracking</p>
+            <div class="price flex">
+              <label>Price: </label>
+              <del>$ 85.00</del>
+              <h5>$70.00</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="view">View All</span>
+    </div>
+  </section>
+
+
+  <section class="best_price best_price2">
+    <div class="s_container">
+      <div class="content flex">
+
+        <div class="right">
+          <h3>Today's Special</h3>
+          <h2>Best Arial View in Town</h2>
+          <h1>30% OFF</h1>
+          <h2>ON PROFESSIONAL CAMERA DRONES</h2>
+          <p>Limmited quantities. <br>
+            See product detail pages for availability.
+          </p>
+          <a href="#" class="btn">shop</a>
+        </div>
+        <div class="left">
+          <img src="image/b2.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="shipping">
+    <div class="s_container">
+      <h1 class="heading">Brands</h1>
+      <div class="content grid">
+        <div class="box">
+          <img src="image/b3.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b4.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b5.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b6.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b7.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b8.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/b9.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="newsletter">
+    <div class="s_container">
+      <h1>Newsletter</h1>
+      <div class="content">
+        <div class="content_heading">
+          <p>Sign uo to receive updates on new arrivals and special offer</p>
+          <h1>Email*</h1>
+        </div>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search..........." name="" value="">
+        <i class="fa fa-search"></i>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="best_price best_price3">
+    <div class="s_container">
+      <div class="content flex">
+        <div class="right">
+          <h2>Need Hepl? Check Out Our Help Center</h2>
+          <p> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <a href="#" class="btn">shop</a>
+        </div>
+        <div class="left">
+          <img src="image/b2.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="s_container">
+      <div class="content">
+        <div class="box">
+          <h3>Store Location</h3>
+          <ul>
+            <li>Kathmandu, Nepal</li>
+            <li>Baniyatar, Tokha</li>
+            <li>companyemail@gmail.com</li>
+            <li>123-456-789</li>
+            <li>Atom Vallay, Nepal</li>
+            <li class="icon">
+              <i class="fa fa-facebook"></i>
+              <i class="fa fa-instagram"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-youtube"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Shop</h3>
+          <ul>
+            <li> <a href="#">HOME</a> </li>
+            <li> <a href="#">PRODUCT</a> </li>
+            <li> <a href="#">SHOP ALL</a> </li>
+            <li> <a href="#">COMPUTER</a> </li>
+            <li> <a href="#">TABLETS</a> </li>
+            <li> <a href="#">DRONES & CAMERAS</a> </li>
+            <li> <a href="#">AUDIO</a> </li>
+            <li> <a href="#">MOBILE</a> </li>
+            <li> <a href="#">T.V & HOME CINEMA</a> </li>
+            <li> <a href="#">WEARABLE TECH</a> </li>
+            <li> <a href="#">SALE</a> </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Customer Support</h3>
+          <ul>
+            <li>Contact us</li>
+            <li>Help Center</li>
+            <li>About Us</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Policy</h3>
+          <ul>
+            <li>Shipping $ Return</li>
+            <li>Term & Conditions</li>
+            <li>Payment Methods</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <section class="Payment">
+    <div class="s_container1">
+      <p>We accept the following paying methods</p>
+      <div class="content">
+        <div class="box">
+          <img src="image/i1.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i2.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i3.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i4.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i5.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i6.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i7.png" alt="">
+        </div>
+        <div class="box">
+          <img src="image/i8.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
